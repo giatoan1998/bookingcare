@@ -1,0 +1,34 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "clone bookingcare.vn",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon --exec babel-node src/server.js"
+  },
+  "keywords": [
+    "fullstack",
+    "nodejs",
+    "express"
+  ],
+  "author": "dinhgiatoanvn",
+  "license": "ISC",
+  "dependencies": {
+    "@babel/core": "7.15.5",
+    "@babel/node": "7.15.4",
+    "@babel/preset-env": "7.15.6",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "8.2.0",
+    "ejs": "3.1.5",
+    "express": "4.17.1",
+    "mysql2": "^2.2.5",
+    "nodemon": "2.0.12",
+    "sequelize": "^6.6.2"
+  },
+  "devDependencies": {
+    "sequelize-cli": "^6.2.0"
+  }
+}
