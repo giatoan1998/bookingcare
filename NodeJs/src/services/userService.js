@@ -111,16 +111,15 @@ let createNewUser = (data) => {
         try {
             let check = await checkUserEmail(data.email);
 
+            // kiểm tra email đã tồn tại hay chưa...
             if(check === true) {
                 resolve({
                     errCode: 1,
-                    message: 'Your email is already in used!'
+                    errMessage: 'Your email is already in used!'
                 })
-            }
-            // kiểm tra email đã tồn tại hay chưa...
-
-            let hashPasswordFromBcrypt = await hashUserPassword(data.password);
-            await db.User.create({
+            }else{
+                let hashPasswordFromBcrypt = await hashUserPassword(data.password);
+                await db.User.create({
                 email: data.email,
                 password: hashPasswordFromBcrypt,
                 firstName: data.firstName,
@@ -130,6 +129,7 @@ let createNewUser = (data) => {
                 gender: data.gender === 1 ? true : false,
                 roleId: data.roleId
             })
+        }
 
             resolve({
                 errCode: 0,
